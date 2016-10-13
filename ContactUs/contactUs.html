@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--
+			COMP125: Client-Side Web Development
+			Group Project: The Lucid Palace
+			Authors: Kevin Ma, Ostap Hamarnyk, Vinood Persad, Joshua MacAulay
+			Date: March 28, 2016
+			
+			Filename: ContacUs.html
+	-->
+    <meta charset="utf-8" />
+    <title>Contact Us</title>
+    <link href="contactUsStyles.css" rel="stylesheet" type="text/css" />
+    <script src="../jquery-1.12.3.min.js"></script>
+    <script src="contactUsScript.js"></script>
+    <script src="../modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+    <div class="header">
+            <div class="subHeader">
+                <div class="name">
+                    <img id="logo" src="../icon.png" alt="Palace logo">
+                    <h1>The Lucid Palace</h1>
+                </div>
+                <div class="nav">
+                    <ul class="list">
+                        <li><a href="../Homepage/homepage.html">Home</a></li>
+                        <li><a href="../Rooms/Rooms.html">Rooms</a></li>
+                        <li><a href="../Events/event.html">Events</a></li>
+                        <li><a href="../Homepage/homepage.html">Locations</a>
+                            <ul>
+                                <li><a href="../Homepage/homepage.html#lucia">St.Lucia</a></li>
+                                <li><a href="../Homepage/homepage.html#bahamas">Bahamas</a></li>
+                                <li><a href="../Homepage/homepage.html#jamaica">Jamaica</a></li>
+                            </ul>
+                        </li> 
+                        <li><a href="../AboutUs/AboutUs.html">About</a></li>
+                        <li><a href="contactUs.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <div class="allPage">
+        <div class="welcomeMsg">
+            <h1><hr class="welcome">&nbsp;Contact Us&nbsp;<hr class="welcome"></h1>
+        </div>
+        <form>
+            <fieldset>
+                <legend>For more information please contact us via the form below</legend>
+                <div class="allForm">
+                    <input id="fName" type="text" required="required" tabindex="1" placeholder="First Name"><br>
+                    <input id="lName" type="text" required="required" tabindex="5" placeholder="Last Name"><br>
+                    <input id="email" tabindex="10" type="email" required="required" placeholder="Email" onchange="emailCheck()"><br>
+                    <p id="mailError"></p>
+                    <input id="pNumber" tabindex="15" type="tel" required="required" placeholder="Phone Number" onchange="phoneNumCheck()"><br>
+                    <p id="phoneError"></p>
+                    <textarea id="comments" tabindex="20" rows="4" cols="40" placeholder="Comments"></textarea>
+                </div> 
+            </fieldset>
+            <br>
+            <button type="submit" tabindex="25" id="submitBtn" onclick="submitForm()">Send</button>
+        </form>
+    </div>
+    <table id="locations">
+        <tr>
+            <td><div class="address">
+        <p><strong>Lucid Palace - St. Lucia</strong></p>
+        <p>Junction of Oum Khun and 14th Street,</p>
+        <p>Castries,</p>
+        <p>Saint Lucia</p>
+        <p>Phone: +855-63-761-998</p>
+        <p>Fax: +855-63-761-999</p>
+        <p>Email: lplucia@lucidpalace.com</p>
+        <p>Web: lucidpalace.com</p>
+    </div></td>
+            <td><div class="address">
+        <p><strong>Lucid Palace - Bahamas</strong></p>
+        <p>Bay Street,</p>
+        <p>Nassau,</p>
+        <p>Bahamas</p>
+        <p>Phone: +234-63-761-998</p>
+        <p>Fax: +234-63-761-999</p>
+        <p>Email: lpbahamas@lucidpalace.com</p>
+        <p>Web: lucidpalace.com</p></td>
+            <td><div class="address">
+        <p><strong>Lucid Palace - Jamaica</strong></p>
+        <p>15 Harbour Street,</p>
+        <p>Kingston,</p>
+        <p>Jamaica</p>
+        <p>Phone: +225-63-761-998</p>
+        <p>Fax: +225-63-761-999</p>
+        <p>Email: lpjamaica@lucidpalace.com</p>
+        <p>Web: lucidpalace.com</p></td>
+        </tr>
+    </table>
+    
+    <div id="map_wrapper">
+        <script>
+            jQuery(function($) {
+    // Asynchronously Load the map API 
+    var script = document.createElement('script');
+    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+    document.body.appendChild(script);
+});
+            function initialize() {
+    var map;
+    var bounds = new google.maps.LatLngBounds();
+    var mapOptions = {
+        mapTypeId: 'roadmap'
+    };
+                    
+    // Display a map on the page
+    map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+    map.setTilt(45);
+        
+    // Multiple Markers
+    var markers = [
+        ['The Lucid Palace, Saint Lucia', 13.938875, -61.044519],
+        ['The Lucid Palace, Bahamas', 24.313110, -78.017368],
+        ['The Lucid Palace, Jamaica', 17.966554, -76.773694]
+    ];
+                        
+    // Info Window Content
+    var infoWindowContent = [
+        ['<div class="info_content">' +
+        '<h3>Lucid Palace in St. Lucia</h3>' +
+        '<p>One of the most popular hotels in Saint Lucia, <br>located on the most visited beach with a spectacular view</p>' + '</div>'],
+        ['<div class="info_content">' +
+        '<h3>Lucid Palace in Bahamas</h3>' +
+        '<p>Luxurious hotel situated in the heart of the West Side National Park.<br>Hotel offers a variety of amazing events, tourist attractions and events.</p>' +
+        '</div>'],
+        ['<div class="info_content">' +
+        '<h3>Lucid Palace in Jamaica</h3>' +
+        '<p>Lucid Palace in Jamaica is one of the most popular tourist attractions.<br>The breathtaking architecture, amazing sea view and the surrounding atmosphere attracts more and more tourists every year.</p>' +
+        '</div>']
+    ];
+        
+    // Display multiple markers on a map
+    var infoWindow = new google.maps.InfoWindow(), marker, i;
+    
+    // Loop through our array of markers & place each one on the map  
+    for( i = 0; i < markers.length; i++ ) {
+        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+        bounds.extend(position);
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: markers[i][0]
+        });
+        
+        // Allow each marker to have an info window    
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                infoWindow.setContent(infoWindowContent[i][0]);
+                infoWindow.open(map, marker);
+            }
+        })(marker, i));
+
+        // Automatically center the map fitting all markers on the screen
+        map.fitBounds(bounds);
+    }
+
+    // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+        this.setZoom(4);
+        google.maps.event.removeListener(boundsListener);
+    });
+}
+        </script>
+        <div id="map_canvas" class="mapping"></div>
+    </div>
+    
+    <div class="footer">
+            
+            <p id="footNav"><a href="../Homepage/homepage.html">Home</a> <a href="../Rooms/Rooms.html">Rooms</a>  <a href="../Events/event.html">Events</a>  <a href="contactUs.html">Contact Us</a>  <a href="../AboutUs/AboutUs.html">About Us</a>  <a href="../Rooms/Rooms.html">Reserve a Room</a>  <a href="../Events/event.html">Reserve an Event</a></p>
+            <p id="links"><a href="https://www.tripadvisor.ca"><img src="../trip.png"></a><a href="https://www.facebook.com"><img src="../facebook.png"></a><a href="https://www.instagram.com"><img src="../instagram.png"></a><a href="https://twitter.com"><img src="../twitter.png"></a><a href="https://plus.google.com/getstarted/getstarted?fww=1"><img src="../googleplus.png"></a></p>
+            <h6>&copy;&nbsp;Copyright The Lucid Palace.<br> All rights reserved. Centennial College 2016</h6>
+        </div>
+</body>
+</html>

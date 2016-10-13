@@ -1,0 +1,326 @@
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+body {
+    font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 2000px;
+    background-color: #fdfdfd;
+}
+
+
+.header {
+    width: 100%;
+    background-attachment: fixed;
+    background-image: url(images/event.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height:30%;
+}
+
+.subHeader {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.7);   
+    padding-right: 25px;
+}
+
+.name h1, .name img {
+    padding-left: 10px;
+    color: #e4e4e4;
+    float: left; 
+    top:0;
+    font-weight: 200;
+}
+.name h1 {
+    padding: 50px 0 0 10px;
+    margin: 0;
+}
+
+/* Navigaton bar */
+.nav ul {
+    float:right;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding: 20px 10px 0 0;
+}
+
+.nav li {
+    line-height: 60px;
+    display: inline-block;
+    width: 80px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.nav a:hover {
+    color: #cb9744;
+	text-shadow:  0 0 2px #cb9744, 0 0 5px #cb9744;
+	
+}
+/* Sub menus */
+.nav li ul {
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    padding: 0;
+    opacity: 0;
+    background-color: rgba(13, 13, 13, 0.7);
+    transition: visibility linear 0.5s, opacity 0.5s linear;
+    
+}
+.nav a {
+    border-bottom: none;
+}
+
+.nav li:hover ul {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    
+}
+
+.nav li ul li {
+    display: block;
+    line-height: 40px; 
+    font-size: 16px;
+    text-align: right;
+    width:150px;
+    text-align: left;
+    padding-left: 10px;
+    
+}
+.nav li ul li:hover {
+    background-color: #cb9744;
+    background-size: 100%;
+    
+}
+.nav li ul li a:hover {
+    color: #fff;
+}
+/* MY CSS ENDS HERE */
+
+.allPage {
+    width: 600px;
+    margin: 0 auto;
+}
+
+
+#calender{
+    float: left;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #333;
+    border-radius:3px;
+    color: #333;
+}
+#showDate{
+    float: right;
+    width: 200px;
+    padding: 5px;
+    margin: 10px;
+}
+#calTable td {
+   color: rgb(178,184,183);
+   text-align: right;
+   cursor: pointer;  
+}
+
+td {
+    line-height: 20px;
+}
+#calender table td.aheadDates {
+   color: blue;
+}
+#prev{
+    float: left;
+    cursor: pointer;
+}
+#next{
+    float: right;
+    cursor: pointer;
+}
+#calTable{
+    margin-left: auto;
+    margin-right: auto;
+}
+span{
+    float: right;
+    
+}
+.error{
+    padding-left:5px;
+    width: 300px;
+    float: left;
+    word-wrap:hyphenate;
+    color: red;
+}
+
+.welcomeMsg {
+    padding: 25px;
+}
+
+.welcomeMsg h1 {
+    padding: 5px 10px;
+    margin: 0 auto;
+}
+
+hr.welcome {
+    display: inline-block;
+    width:15%;
+    padding: 0 5px 8px 5px;
+    margin: 0 auto;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+}
+
+fieldset {
+    border: 1px solid #333333;
+    border-radius:15px;
+    text-align: center;
+    padding: 40px 15px;
+}
+legend {
+    font-size: 25px;
+    text-align: left;
+    padding: 7px;
+    border: none;
+}
+
+#pricelist {
+    border: 1px solid #333;
+    border-radius: 10px;
+    float: right;
+    
+}
+
+#pricelist th {
+    text-align: left;
+    font-weight: 200;
+}
+
+#pricelist thead {
+    text-align: left;
+}
+
+label {
+    margin-left: 5%;
+    float: left;
+}
+#guest input {
+    margin-left: 5%;
+    margin-bottom: 5px;
+    width: 250px;
+    float: left;
+    padding: 5px;
+    font-size: 10px;
+    color: #555555;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+#guest select{
+    float: left;
+    margin-left: 5%;
+    margin-top: 5px;
+}
+
+#card {
+    text-align: left;
+}
+#card input[type=text], #card input[type=number], #card input[type=date] {
+    padding: 5px;
+    margin-left: 5%;
+    font-size: 10px;
+    color: #555555;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    width:200px;
+}
+
+#card img {
+    margin-left: 5%;
+}
+
+#card input[type=radio] {
+    float: none;
+}
+
+#steps {
+    width: 100%;
+    border-collapse: collapse;
+}
+#steps th {
+    border: 1px solid #333333;
+    font-size: 20px;
+    padding: 7px;
+    width: 33%;
+}
+.highlighted{
+	background-color:#333333;
+    color: #fff;
+}
+#submitBtn {
+    width: 300px;
+    height: 50px;
+    font-size: 15px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #333333;
+}
+
+#submitBtn:hover {
+    background: #333333;
+    color: #fff;
+}
+
+#last {
+    border: none;
+}
+
+
+.footer {
+    position: absolute;
+    top: 2100px;
+    color: #fff;
+    width: 100%;
+    bottom: 0;
+    height: 250px;
+    background: #1d1d1d;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer h6 {
+    font-weight: 400;
+}
+
+
+#footNav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+#links a {
+    text-decoration: none;
+    padding-left:10px;
+    
+}
+
+
+

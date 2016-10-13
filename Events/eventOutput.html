@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--
+			COMP125: Client-Side Web Development
+			Group Project: The Lucid Palace
+			Authors: Kevin Ma, Ostap Hamarnyk, Vinood Persad, Joshua MacAulay
+			Date: March 28, 2016
+			
+			Filename: eventOutput.html
+	-->
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="eventOut.css" type="text/css">
+    <script src="../modernizr.custom.05819.js"></script>
+    <script src="../jquery-1.12.3.min.js"></script>
+    <title>Thank You</title>
+</head>
+<body onload="showResult()">
+    <div class="header">
+            <div class="subHeader">
+                <div class="name">
+                    <img id="logo" src="../icon.png" alt="Palace logo">
+                    <h1>The Lucid Palace</h1>
+                </div>
+                <div class="nav">
+                    <ul class="list">
+                        <li><a href="../Homepage/homepage.html">Home</a></li>
+                        <li><a href="../Rooms/Rooms.html">Rooms</a></li>
+                        <li><a href="event.html">Events</a></li>
+                        <li><a href="../Homepage/homepage.html">Locations</a>
+                            <ul>
+                                <li><a href="../Homepage/homepage.html#lucia">St.Lucia</a></li>
+                                <li><a href="../Homepage/homepage.html#bahamas">Bahamas</a></li>
+                                <li><a href="../Homepage/homepage.html#jamaica">Jamaica</a></li>
+                            </ul>
+                        </li> 
+                        <li><a href="../AboutUs/AboutUs.html">About</a></li>
+                        <li><a href="../ContactUs/contactUs.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <img src="images/done.png">
+		<h4>Thank you! We have recieved your event request with the following information:</h4>
+    <article>
+    <p id="fnameResult"></p>
+    <p id="lNameResult"></p>
+    <p id="companyNameResult"></p>
+    <p id="pNumberResult"></p>
+    <p id="eventLengthResult"></p>
+    <p id="eventLocation"></p>
+    <p id="dateResult"></p>
+    <p id="costResult"></p>
+    <br />
+    <p id="creditType"></p>
+    <p id="creditName"></p>
+    <p id="creditNumber"></p>
+    <p id="expiryDate"></p>
+    </article>
+
+    <input type="submit" onclick="clearStorage()" value="OK" id="submitButton"/>
+    
+    <table id="steps">
+        <tr>
+            <th>1. Choose your event</th>
+            <th class="highlighted">2. Confirm event</th>
+        </tr>
+    </table>
+    <div class="footer">  
+            <p id="footNav"><a href="../Homepage/homepage.html">Home</a> <a href="../Rooms/Rooms.html">Rooms</a>  <a href="../Events/event.html">Events</a>  <a href="../ContactUs/contactUs.html">Contact Us</a>  <a href="AboutUs.html">About Us</a>  <a href="../Rooms/Rooms.html">Reserve a Room</a>  <a href="../Events/event.html">Reserve an Event</a></p>
+            <p id="links"><a href="https://www.tripadvisor.ca"><img src="../trip.png"></a><a href="https://www.facebook.com"><img src="../facebook.png"></a><a href="https://www.instagram.com"><img src="../instagram.png"></a><a href="https://twitter.com"><img src="../twitter.png"></a><a href="https://plus.google.com/getstarted/getstarted?fww=1"><img src="../googleplus.png"></a></p>
+            <h6>&copy;&nbsp;Copyright The Lucid Palace.<br> All rights reserved. Centennial College 2016</h6>
+        </div>
+    <script src="events.js"></script>
+</body>
+</html>

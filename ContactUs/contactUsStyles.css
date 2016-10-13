@@ -1,0 +1,259 @@
+/*
+			COMP125: Client-Side Web Development
+			Group Project: The Lucid Palace
+			Authors: Kevin Ma, Ostap Hamarnyk, Vinood Persad, Joshua MacAulay
+			Date: March 28, 2016
+			
+			Filename: contactUsStyles.css
+*/
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+body {
+    font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 2000px;
+    background-color: #fdfdfd;
+}
+
+
+.header {
+    width: 100%;
+    background-attachment: fixed;
+    background-image: url(reception.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height:30%;
+}
+
+.subHeader {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.7);   
+    padding-right: 25px;
+}
+
+.name h1, .name img {
+    padding-left: 10px;
+    color: #e4e4e4;
+    float: left; 
+    top:0;
+    font-weight: 200;
+}
+.name h1 {
+    padding: 50px 0 0 10px;
+    margin: 0;
+}
+
+/* Navigaton bar */
+.nav ul {
+    float:right;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding: 20px 10px 0 0;
+}
+
+.nav li {
+    line-height: 60px;
+    display: inline-block;
+    width: 80px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.nav a:hover {
+    color: #cb9744;
+	text-shadow:  0 0 2px #cb9744, 0 0 5px #cb9744;
+	
+}
+/* Sub menus */
+.nav li ul {
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    padding: 0;
+    opacity: 0;
+    background-color: rgba(13, 13, 13, 0.7);
+    transition: visibility linear 0.5s, opacity 0.5s linear;
+    
+}
+.nav a {
+    border-bottom: none;
+}
+
+.nav li:hover ul {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    
+}
+
+.nav li ul li {
+    display: block;
+    line-height: 40px; 
+    font-size: 16px;
+    text-align: right;
+    width:150px;
+    text-align: left;
+    padding-left: 10px;
+    
+}
+.nav li ul li:hover {
+    background-color: #cb9744;
+    background-size: 100%;
+    
+}
+.nav li ul li a:hover {
+    color: #fff;
+}
+
+
+.allPage{
+    border-radius: 4px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+
+.allForm{
+    width: 50%;
+    margin: 0 auto;
+}
+input{
+    line-height: 25px;
+}
+
+input, textarea {
+    margin:10px;
+    padding: 5px;
+    font-size: 15px;
+    color: #555555;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 220px;
+    width:100%;
+}
+
+legend {
+    text-align: center;
+    font-size: 17px;
+    padding: 7px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+input {
+    width: 100%;
+}
+
+.error{
+    float: right;
+    padding-left:5px;
+    width: 300px;
+    float: left;
+    word-wrap:hyphenate;
+    color: red;
+}
+span{
+    float:right;
+}
+
+.welcomeMsg {
+    padding: 25px;
+}
+
+.welcomeMsg h1 {
+    padding: 5px 10px;
+    margin: 0 auto;
+}
+
+hr.welcome {
+    display: inline-block;
+    width:15%;
+    padding: 0 5px 8px 5px;
+    margin: 0 auto;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+}
+
+fieldset {
+    border:none;
+}
+
+button {
+    width:150px;
+    height:50px;
+    background-color: transparent;
+    color: #333;
+    border:1px solid #333333;
+    vertical-align: middle;
+}
+button:hover {
+    color: #fff;
+    background: #333;
+    
+}
+
+#map_wrapper {
+    height: 350px;
+}
+
+#map_canvas {
+    width: 50%;
+    height: 100%;
+    background: #cccccc;
+    margin: 0 auto;
+}
+
+.footer {
+    position: absolute;
+    top: 2100px;
+    color: #fff;
+    width: 100%;
+    bottom: 0;
+    height: 200px;
+    background: #1d1d1d;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer h6 {
+    font-weight: 400;
+}
+
+
+#footNav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+#links a {
+    text-decoration: none;
+    padding-left:10px;  
+}
+
+#locations {
+    margin:  0 auto;
+}
+
+.address{
+    margin: 20px;
+}

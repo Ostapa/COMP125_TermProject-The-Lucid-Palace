@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Lucid Palace</title>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="template.css">
+		<link href="http://fonts.googleapis.com/css?family=Arizonia" rel="stylesheet" type="text/css">
+		<script src="jquery-1.12.3.min.js"></script>
+		<script>
+			function select(typeName){
+				if(parseInt(localStorage.getItem(typeName)) > 0){
+					$("#rmType").val(typeName);
+					$("form").submit();
+				}else{
+					alert("Sorry there are currently no " + typeName + " rooms available. Please select a different type of room.");
+				}
+			}
+			
+			function setUpRoomAvail(){
+				if(localStorage.getItem("Interconnecting")=== null){
+					localStorage.setItem("Interconnecting",100);
+				}
+				if(localStorage.getItem("Duplex")=== null){
+					localStorage.setItem("Duplex",50);
+				}
+				if(localStorage.getItem("Lanai")=== null){
+					localStorage.setItem("Lanai",25);
+				}
+				if(localStorage.getItem("Suite")=== null){
+					localStorage.setItem("Suite",10);
+				}
+				if(localStorage.getItem("King")=== null){
+					localStorage.setItem("King",1);
+				}
+				$("#rm1").html(localStorage.getItem("Interconnecting"));
+				$("#rm2").html(localStorage.getItem("Duplex"));
+				$("#rm3").html(localStorage.getItem("Lanai"));
+				$("#rm4").html(localStorage.getItem("Suite"));
+				$("#rm5").html(localStorage.getItem("King"));
+			}
+		</script>
+    </head>
+    <body onload="setUpRoomAvail()">
+        <div class="header">
+             <!-- Place your banner picture in the css file-->
+            <div class="subHeader">
+                <div class="name">
+                    <img src="icon.png" alt="Palace logo">
+                    <h1>The Lucid Palace</h1>
+                </div>
+                <div class="nav">
+                    <ul class="list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="Rooms.html">Rooms</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Locations</a>
+                            <ul>
+                                <li><a href="#">St. Lucia</a></li>
+                                <li><a href="#">Bahamas</a></li>
+                                <li><a href="#">Jamaica</a></li>
+                            </ul>
+                        </li> 
+                        <li><a href="AboutUs.html">About</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main"><!-- Content goes here -->
+            <h1><hr class="welcome">&nbsp;Rooms&nbsp;<hr class="welcome"></h1>
+				<div class="rm" style="background-image: url('interconnect.jpg');background-size:contain;background-repeat:none" onclick="select('Interconnecting')">
+					<h1>Interconnecting Rooms</h1>
+					<p>A room sharing a common door. Mostly used by families.</p>
+					<h5>There are <span id="rm1"></span> rooms currently available for reservation!</h5>
+				</div>
+				<div class="rm" style="background-image: url('duplex.jpg'); background-size;300px 100px:; background-repeat:none"id="second" onclick="select('Duplex')">
+					<h1>Duplex Rooms</h1>
+					<p>A room containing two floors, separated by internal staircase.</p>
+					<h5>There are <span id="rm2"></span> rooms currently available for reservation!</h5>
+				</div>
+				<div class="rm" style="background-image: url('lanai.jpg'); background-size;300px 100px:; background-repeat:none"id="third"onclick="select('Lanai')">
+					<h1>Lanai Rooms</h1>
+					<p>A room over looking scenic beauties e.g. Garden, landscape or waterfall</p>
+					<h5>There are <span id="rm3"></span> rooms currently available for reservation!</h5>
+				</div>
+				<div class="rm" style="background-image: url('suite.jpg'); background-size;300px 100px:; background-repeat:none"onclick="select('Suite')">
+					<h1>Suite Rooms</h1>
+					<p>A room comprising of two or more bedrooms, a living room and a dining room</p>
+					<h5>There are <span id="rm4"></span> rooms currently available for reservation!</h5>
+				</div>
+				<div class="rm" style="background-image: url('king.jpg'); background-size;300px 100px:; background-repeat:none" onclick="select('King')">
+					<h1>King Rooms</h1>
+					<p>A full size all inclusive room with a king bed</p>
+					<h5>There are <span id="rm5"></span> rooms currently available for reservation!</h5>
+				</div>
+				<form method="get" action="makeReservation.html"><input type="hidden" name="roomType" id="rmType"></input></form>
+        </div>
+		<table border="1" cellspacing=0 style="width:100%; text-align:center">
+		<tr>
+			<td class="highlighted" style="background-color:yellow">1. Choose your room</td>
+			<td>2. Enter your details</td>
+			<td>3. Confirm your reservation</td>
+		</tr>
+		</table>
+        <div class="footer">
+            <h6>&copy;&nbsp;Centennial College | COMP 225 | Web Development | Winter 2016</h6>
+            <h3>Creators</h3>
+            <p>Kevin Ma</p>
+            <p>Vinood Persad</p>
+            <p>Josh MacAulay</p>
+            <p>Ostap Hamarnyk</p>
+        </div>
+    </body>
+</html>

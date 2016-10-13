@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--
+			COMP125: Client-Side Web Development
+			Group Project: The Lucid Palace
+			Authors: Kevin Ma, Ostap Hamarnyk, Vinood Persad, Joshua MacAulay
+			Date: March 28, 2016
+			
+			Filename: event.html
+	-->
+    <meta charset="utf-8" />
+    <title>Book an Event</title>
+    <link href="eventStyles.css" rel="stylesheet" type="text/css" />
+    
+    <script src="../jquery-1.12.3.min.js"></script>
+</head>
+<body>
+     <div class="header">
+            <div class="subHeader">
+                <div class="name">
+                    <img id="logo" src="../icon.png" alt="Palace logo">
+                    <h1>The Lucid Palace</h1>
+                </div>
+                <div class="nav">
+                    <ul class="list">
+                        <li><a href="../Homepage/homepage.html">Home</a></li>
+                        <li><a href="../Rooms/Rooms.html">Rooms</a></li>
+                        <li><a href="event.html">Events</a></li>
+                        <li><a href="../Homepage/homepage.html">Locations</a>
+                            <ul>
+                                <li><a href="../Homepage/homepage.html#lucia">St.Lucia</a></li>
+                                <li><a href="../Homepage/homepage.html#bahamas">Bahamas</a></li>
+                                <li><a href="../Homepage/homepage.html#jamaica">Jamaica</a></li>
+                            </ul>
+                        </li> 
+                        <li><a href="../AboutUs/AboutUs.html">About</a></li>
+                        <li><a href="../ContactUs/contactUs.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="allPage">
+            <div class="welcomeMsg">
+                    <h1><hr class="welcome">&nbsp;Events &amp; Meetings&nbsp;<hr class="welcome"></h1>
+            </div>
+            <h3>Book your event with Lucid Palace today</h3>
+            <form name="eventForm" class="info">
+                <fieldset>
+                    <legend>Guest Information</legend>
+                    <fieldset  id="pricelist">
+                    <legend>Prices</legend>
+                    <table>
+                            <tr>
+                                <th>One Hour: </th>
+                                <th>$149.99</th>
+                            </tr>
+                            <tr>
+                                <th>Three Hours:</th>
+                                <th>$449.99</th>
+                            </tr>
+                            <tr>
+                                <th>Five Hours:</th>
+                                <th>$749.99</th>
+                            </tr>
+                            <tr>
+                                <th>Eight Hours:</th>
+                                <th>$1199.99</th>
+                            </tr>
+                        </table>
+                        <h5>Plus applicable taxes.</h5>
+                    </fieldset>
+                    <div id="guest">
+                        <label for="txtFname">First Name:</label><br>
+                        <input id="fName" type="text" size="20" tabindex="1" required="required"><br>
+                        <label for="txtlName">Last Name: </label><br>
+                        <input id="lName" type="text" size="20" tabindex="5" required="required" /><br>
+                        <label for="txtCompanyName">Company Name:</label><br>
+                        <input id="companyName" type="text" size="30" tabindex="10" required="required" /><br> 
+                        <label for="telPhoneNumber">Phone Number:</label><br>
+                        <input id="phoneNumber" type="tel" size="15" tabindex="15" required="required"><br> 
+                        <p><label for="chooseHotel">Hotel Location:</label>
+                            <select id="location" name="eventLocation" required="required" tabindex="20">
+                                <option tabindex="21" value="St.Lucia">St.Lucia</option>
+                                <option tabindex="25" value="Bahamas">Bahamas</option>
+                                <option tabindex="30" value="Jamaica">Jamaica</option>
+                            </select></p><br>
+                        <p><label for="eventLength">Length Of Event:</label>
+                            <select id="eventLength" name="duration" required="required" tabindex="35">
+                                <option value="0"></option>
+                                <option tabindex="35" value="150">1 Hour</option>
+                                <option tabindex="40" value="450">3 Hours</option>
+                                <option tabindex="45" value="750">5 Hours</option>
+                                <option tabindex="50" value="1200">8 Hours</option>
+                            </select></p>
+                    <div class="error">
+                        <!--<p id="PEOutput"></p>-->
+                        <span id="eOutput"></span> 
+                    </div>
+                    </div>
+                    
+                    <!--prices-->            
+                
+                </fieldset>
+                
+                
+                <fieldset>
+
+                    <legend>Select A Date</legend>
+                    <div id="calender">
+                        <div id="prev">&lt;</div>
+                        <div id="next">&gt;</div>
+                        <table id="calTable">
+
+                            <caption id="tableCaption"></caption>
+
+                            <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="showDate">
+                        <p><strong>Quick Summary</strong></p>
+                        <p id="dateSelected"></p>
+                        <p id="showCost"></p>
+                    </div>
+                    <div class="leftAlign">
+                        <span class="error" id="calenderError"></span>
+                    </div>
+                </fieldset>
+                <!--Credit payment-->
+                <fieldset id="card">
+                    <legend>Payment Info</legend>
+                            <label for="creditType">Credit Card:</label><br>
+                            <img src="images/visa.gif" /><input id="visa" type="radio" name="creditType" tabindex="55" required="required" value="Visa" />&nbsp;
+                            <img src="images/mastercardlogo.png" /><input id="mastercard" type="radio" name="creditType" tabindex="60" required="required" value="Mastercard" />&nbsp;
+                            <img src="images/amexlogo.png" /><input id="amex" type="radio" name="creditType" tabindex="65" required="required" value="Amex" /><br>
+                            <label for="creditName">Name: </label><br>
+                            <input id="creditName" type="text" tabindex="70" required="required"><br>
+                            <label for="creditNumber">Card Number:</label><br>
+                            <input id="creditNumber" type="number" tabindex="75" required="required"><br>
+                            <label for="expiryDate">Expiry Date:</label><br>
+                            <input id="expiryDate" type="date" tabindex="80" required="required" />
+                    <div class="error">
+                        <span class="error" id="creditError"></span>
+                    </div>
+                </fieldset>
+                <fieldset id="last">
+				<input type="submit" value="Reserve Room" id="submitBtn"><br>
+                <p>Fields marked with * are required</p>
+				<img src="images/userlock.png" width="30px">
+				<span style="font-size:75%;">We use secure transmission and encrypted storage to protect your personal information.
+				</span>
+			</fieldset>
+		</form><br>
+	</article>
+</form>
+    </div>
+<table id="steps">
+        <tr>
+            <th class="highlighted">1. Choose your event</th>
+            <th>2. Confirm event</th>
+        </tr>
+    </table>
+<div class="footer">
+            
+            <p id="footNav"><a href="../Homepage/homepage.html">Home</a> <a href="../Rooms/Rooms.html">Rooms</a>  <a href="event.html">Events</a>  <a href="../ContactUs/contactUs.html">Contact Us</a>  <a href="../AboutUs/AboutUs.html">About Us</a>  <a href="../Rooms/Rooms.html">Reserve a Room</a>  <a href="../Events/event.html">Reserve an Event</a></p>
+            <p id="links"><a href="https://www.tripadvisor.ca"><img src="../trip.png"></a><a href="https://www.facebook.com"><img src="../facebook.png"></a><a href="https://www.instagram.com"><img src="../instagram.png"></a><a href="https://twitter.com"><img src="../twitter.png"></a><a href="https://plus.google.com/getstarted/getstarted?fww=1"><img src="../googleplus.png"></a></p>
+            <h6>&copy;&nbsp;Copyright The Lucid Palace.<br> All rights reserved. Centennial College 2016</h6>
+        </div>
+    <script src="../modernizr.custom.05819.js"></script>
+    <script src="events.js"></script>
+    <!--<script src="eventValidation.js"></script>-->
+</body>
+</html>

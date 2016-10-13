@@ -1,0 +1,174 @@
+/*
+			COMP125: Client-Side Web Development
+			Group Project: The Lucid Palace
+			Authors: Kevin Ma, Ostap Hamarnyk, Vinood Persad, Joshua MacAulay
+			Date: March 28, 2016
+			
+			Filename: eventOus.css
+*/
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+body {
+    font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd;
+}
+
+
+.header {
+    background-image("ksks.png");
+    height:100px;
+}
+
+.subHeader {
+    position: fixed;
+    width: 100%;
+    background-color: #232323;   
+    padding-right: 25px;
+}
+
+.name h1, .name img {
+    padding-left: 10px;
+    color: #e4e4e4;
+    float: left; 
+    top:0;
+    font-weight: 200;
+}
+.name h1 {
+    padding: 50px 0 0 10px;
+    margin: 0;
+}
+
+/* Navigaton bar */
+.nav ul {
+    float:right;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding: 20px 10px 0 0;
+}
+
+.nav li {
+    line-height: 60px;
+    display: inline-block;
+    width: 80px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.nav a:hover {
+    color: #cb9744;
+	text-shadow:  0 0 2px #cb9744, 0 0 5px #cb9744;
+	
+}
+/* Sub menus */
+.nav li ul {
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    padding: 0;
+    opacity: 0;
+    background-color: rgba(13, 13, 13, 0.7);
+    transition: visibility linear 0.5s, opacity 0.5s linear;
+    
+}
+.nav a {
+    border-bottom: none;
+}
+
+.nav li:hover ul {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    
+}
+
+.nav li ul li {
+    display: block;
+    line-height: 40px; 
+    font-size: 16px;
+    text-align: right;
+    width:150px;
+    text-align: left;
+    padding-left: 10px;
+    
+}
+.nav li ul li:hover {
+    background-color: #cb9744;
+    background-size: 100%;
+    
+}
+.nav li ul li a:hover {
+    color: #fff;
+}
+
+#steps {
+    width: 100%;
+    border-collapse: collapse;
+}
+#steps th {
+    border: 1px solid #333333;
+    font-size: 20px;
+    padding: 7px;
+    width: 33%;
+}
+.highlighted{
+	background-color:#333333;
+    color: #fff;
+}
+
+#submitButton {
+    width: 300px;
+    height: 50px;
+    font-size: 15px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #333333;
+    margin-bottom: 50px;
+}
+
+#submitButton:hover {
+    background: #333333;
+    color: #fff;
+}
+.footer {
+    position: absolute;
+    top: 1000px;
+    color: #fff;
+    width: 100%;
+    bottom: 0;
+    height: 250px;
+    background: #1d1d1d;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer h6 {
+    font-weight: 400;
+}
+
+
+#footNav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+#links a {
+    text-decoration: none;
+    padding-left:10px;
+    
+}

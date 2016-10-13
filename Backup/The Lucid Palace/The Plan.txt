@@ -1,0 +1,34 @@
+1. Homepage
+	-3 divs (Ottawa, Toronto, Niagra Falls)
+		-features for each location
+		-customer positive feedback, satisfied
+		
+2.Contact Us
+	-customer feedback
+	
+3. About Us
+	-about the company
+	
+4. Room Availability or just have a search form
+	-short descriptions of the rooms (like filotti real estate )
+	-dimensions of room
+	-pictures multiple pictures (mouse over to see other ones)
+	-other info
+	-3 divs
+		-1 for rooms in Toronto hotel location
+		-1 for rooms in Location 2 hotel location
+		-1 for rooms in Location 3 hotel location
+
+5. Booking for Events
+
+6. Make Reservation
+	Form Radio button
+		-depending on which button selected, repopulate drop down list for rooms available to reserve
+
+7. Find Reservation by Reservation ID
+
+8. View Reservations made by certain client (Firstname and Lastname)
+	-can cancel
+	-or just view
+	Store using JS Objects
+		using localstorage

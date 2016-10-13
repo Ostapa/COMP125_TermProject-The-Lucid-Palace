@@ -1,0 +1,256 @@
+/*
+			COMP125: Client-Side Web Development
+			Group Project: The Lucid Palace
+			Authors: Kevin Ma, Ostap Hamarnyk, Vinood Persad, Joshua MacAulay
+			Date: March 28, 2016
+			
+			Filename: rooms.css
+*/
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+body {
+    font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333333;
+    text-align: center;
+    margin: 0;
+    height: 2000px;
+    background-color: #fdfdfd;
+}
+
+
+.header {
+    width: 100%;
+    background-image:url(Images/rooms.jpg);
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height:30%;
+}
+
+.subHeader {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.7);   
+}
+
+.name h1, .name img {
+    padding-left: 10px;
+    color: #e4e4e4;
+    float: left; 
+    top:0;
+    font-weight: 200;
+}
+.name h1 {
+    padding: 50px 0 0 10px;
+    margin: 0;
+}
+
+/* Navigaton bar */
+.nav ul {
+    float:right;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding: 20px 10px 0 0;
+}
+
+.nav li {
+    line-height: 60px;
+    display: inline-block;
+    width: 80px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.nav a:hover {
+    color: #cb9744;
+	text-shadow:  0 0 2px #cb9744, 0 0 5px #cb9744;
+	
+}
+/* Sub menus */
+.nav li ul {
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    padding: 0;
+    opacity: 0;
+    background-color: rgba(13, 13, 13, 0.7);
+    transition: visibility linear 0.5s, opacity 0.5s linear;
+    
+}
+.nav a {
+    border-bottom: none;
+}
+
+.nav li:hover ul {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    
+}
+
+.nav li ul li {
+    display: block;
+    line-height: 40px; 
+    font-size: 16px;
+    text-align: right;
+    width:150px;
+    text-align: left;
+    padding-left: 10px;
+    
+}
+.nav li ul li:hover {
+    background-color: #cb9744;
+    background-size: 100%;
+    
+}
+.nav li ul li a:hover {
+    color: #fff;
+}
+.footer {
+    position: absolute;
+    top: 2500px;
+    color: #fff;
+    width: 100%;
+    bottom: 0;
+    height: 250px;
+    background: #1d1d1d;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer h6 {
+    font-weight: 400;
+}
+
+
+#footNav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+#links a {
+    text-decoration: none;
+    padding-left:10px;
+    
+}
+hr.welcome {
+    display: inline-block;
+    width:15%;
+    padding: 0 5px 8px 5px;
+    margin: 0 auto;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+}
+
+.main p {
+	margin-right:10%;
+	margin-left: 10%;
+	padding:0;
+
+}
+
+.main{
+	padding-top:35px;
+	padding-bottom: 35px;
+	margin-left:5%;
+	margin-right:5%;
+	margin-top: 20px;
+}
+#room{
+	box-shadow: 8px 8px 7px grey;
+	background-color:#C8C8C8;
+	border-radius: 6px;
+}
+
+#eat{
+	box-shadow: 8px 8px 7px grey;
+	background-color:#FBE1C6;
+	border-radius: 6px;
+}
+
+#help{
+	box-shadow: 8px 8px 7px grey;
+	background-color:#A3A3AB;
+	border-radius: 6px;
+}
+
+.rm{
+	height:300px;
+	width:100%;
+	margin-right:auto;
+	margin-left:auto;
+	background-color: ivory;
+	margin-top: 10px;
+	border-radius:4px;
+	color:white;
+}
+
+.rm h1{
+	padding-top: 5%;
+	font-family: 'Arizonia', cursive;
+	font-size: 45px;
+}
+
+.main a{
+	width:50%;
+	max-height:300px;
+	padding:0;
+	text-decoration:none;
+	
+}
+
+.back {
+    background: rgba(51,51,51, 0.4);
+    width: 100%;
+}
+
+#steps {
+    width: 100%;
+    border-collapse: collapse;
+}
+#steps td {
+    border: 1px solid #333333;
+    font-size: 20px;
+    padding: 7px;
+    width: 33%;
+}
+.highlighted{
+	background-color:#333333;
+    color: #fff;
+}
+
+button {
+    margin-top: 25px;
+    font-size: 1em;
+    width:150px;
+    height:50px;
+    background: rgba(51,51,51, 0.4);
+    border: 1px solid #fff;
+    color: #fff;
+    vertical-align: middle;
+}
+button:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+button a,button a:hover, button a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+h3 {
+    font-weight: 200;
+}

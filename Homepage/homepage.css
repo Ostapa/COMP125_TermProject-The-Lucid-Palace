@@ -1,0 +1,265 @@
+/*
+			COMP125: Client-Side Web Development
+			Group Project: The Lucid Palace
+			Authors: Kevin Ma, Ostap Hamarnyk, Vinood Persad, Joshua MacAulay
+			Date: March 28, 2016
+			
+			Filename: homepage.css
+*/
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+body {
+    font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 2000px;
+    background-color: #fdfdfd;
+}
+
+
+.header {
+    width: 100%;
+    background-attachment: fixed;
+    background-image: url(Images/banner.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height:30%;
+}
+
+.subHeader {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.7);   
+    padding-right: 25px;
+}
+
+.name h1, .name img {
+    padding-left: 10px;
+    color: #e4e4e4;
+    float: left; 
+    top:0;
+    font-weight: 200;
+}
+.name h1 {
+    padding: 50px 0 0 10px;
+    margin: 0;
+}
+.wrapper {
+    width:100%;    
+    margin: 0;
+    text-align: center;
+}
+
+.welcome {
+    padding: 0 5px;
+}
+#locations {
+    padding: 50px 0 20px;
+}
+.facilities {
+    width: 100%;
+    display: inline-block;
+    outline: 0;
+    
+}
+.facilities img {
+    zoom: 1.6; /* This is not gonna work in Mozila or Opera*/
+    display: inline-block;
+    width:33%;
+    padding: 25px 0;
+    margin: 0;
+    min-height: 225px;
+    background: none;
+    border: none;
+    
+}
+
+.facitites img a:hover {
+    background: rgba(13, 13, 13, 0.7);
+}
+.facilities h1 {
+    padding: 50px 0 10px;
+}
+/* Navigaton bar */
+.nav ul {
+    float:right;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding: 20px 10px 0 0;
+}
+
+.nav li {
+    line-height: 60px;
+    display: inline-block;
+    width: 80px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.nav a:hover {
+    color: #cb9744;
+	text-shadow:  0 0 2px #cb9744, 0 0 5px #cb9744;
+	
+}
+/* Sub menus */
+.nav li ul {
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    padding: 0;
+    opacity: 0;
+    background-color: rgba(13, 13, 13, 0.7);
+    transition: visibility linear 0.5s, opacity 0.5s linear;
+    
+}
+.nav a {
+    border-bottom: none;
+}
+
+.nav li:hover ul {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    
+}
+
+.nav li ul li {
+    display: block;
+    line-height: 40px; 
+    font-size: 16px;
+    text-align: right;
+    width:150px;
+    text-align: left;
+    padding-left: 10px;
+    
+}
+.nav li ul li:hover {
+    background-color: #cb9744;
+    background-size: 100%;
+    
+}
+.nav li ul li a:hover {
+    color: #fff;
+}
+
+/* Positioning and styling location divs */
+#lucia, #bahamas, #jamaica {
+    height: 300px;
+}
+#lucia{
+    background-image: url(Images/toronto.jpg);
+    background-size: 100%;
+}
+
+#bahamas {
+    background-image: url(Images/ottawa.jpg);
+    background-size: 100%;
+}
+#jamaica {
+    background-image:url(Images/niagara.jpg);
+    background-size: 100%;
+}
+
+.details p{
+    display: none;
+}
+.details {
+    background-color: rgba(13, 13, 13, 0.7);
+    height: 100px;
+    float: left;
+    color: #fff;
+    margin: 0 20px 10px;
+}
+
+#bahamas .details {
+    float: right !important;
+    
+}
+
+.welcomeMsg {
+    padding: 25px;
+}
+
+.welcomeMsg h1 {
+    padding: 5px 10px;
+    margin: 0 auto;
+}
+
+hr.welcome {
+    display: inline-block;
+    width:15%;
+    padding: 0 5px 8px 5px;
+    margin: 0 auto;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+}
+.details p, h1{
+    margin: 0;
+    padding: 10px;
+}
+
+#makeReservation {
+    width: 100%;
+    padding: 30px 0;
+}
+
+button {
+    font-size: 1em;
+    width:150px;
+    height:50px;
+    background-color: transparent;
+    border: 1px solid #333;
+    color: #333;
+    vertical-align: middle;
+}
+button:hover {
+    background-color:#333;
+    color: #fff;
+}
+
+button a,button a:hover, button a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer {
+    position: absolute;
+    top: 2600px;
+    color: #fff;
+    width: 100%;
+    bottom: 0;
+    height: 250px;
+    background: #1d1d1d;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer h6 {
+    font-weight: 400;
+}
+
+
+#footNav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+#links a {
+    text-decoration: none;
+    padding-left:10px;
+    
+}

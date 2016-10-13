@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+			COMP125: Client-Side Web Development
+			Group Project: The Lucid Palace
+			Authors: Kevin Ma, Ostap Hamarnyk, Vinood Persad, Joshua MacAulay
+			Date: March 28, 2016
+			
+			Filename: homepage.html
+	-->
+        <title>The Lucid Palace</title>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="homepage.css">
+        <script src="../jquery-1.12.3.min.js"></script>
+        <script src="homepage.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="subHeader">
+                <div class="name">
+                    <img id="logo" src="../icon.png" alt="Palace logo">
+                    <h1>The Lucid Palace</h1>
+                </div>
+                <div class="nav">
+                    <ul class="list">
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="../Rooms/Rooms.html">Rooms</a></li>
+                        <li><a href="../Events/event.html">Events</a></li>
+                        <li><a href="#locations">Locations</a>
+                            <ul>
+                                <li><a href="#lucia">St.Lucia</a></li>
+                                <li><a href="#bahamas">Bahamas</a></li>
+                                <li><a href="#jamaica">Jamaica</a></li>
+                            </ul>
+                        </li> 
+                        <li><a href="../AboutUs/AboutUs.html">About</a></li>
+                        <li><a href="../ContactUs/contactUs.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="welcome">
+                <div class="welcomeMsg">
+                    <h1><hr class="welcome">&nbsp;Welcome to Lucid Palace&nbsp;<hr class="welcome"></h1>
+                </div>
+                
+                <img src="Images/five_star_icons.png" alt="five-star icon">
+                
+                <p>A lavishly imagined dream, Lucid Palace offers you a magical place to enjoy the quintessence of 5-star luxury hospitality and authentic local experiences. From 394 luxurious rooms and suites, to our award-winning culinary cuisine, Lucid Palace is the definition of an unrivalled Canadian fantasy.</p>
+            
+                <p>Located in the most popular cities of Ontario, Lucid Palace is grand in both its design and myriad of offerings. From a 1.3 km pristine beach, landscaped pools and a private marina overlooking a natural bay, Lucid Palace is perfect for a once-in-a lifetime holiday or for events and meetings that make a statement, with some of the city’s largest hotel conference centres and the latest technology.</p>
+
+                <p>An ethereal experience, Lucid Palace is truly one of the most inspiring hotels in Canada and we look forward to welcoming you.</p>
+            </div>
+            <a href="../Rooms/Rooms.html"><div id="makeReservation">
+                <button>Book now</button>
+            </div></a>
+            <div class="facilities">
+                <h1><hr class="welcome">&nbsp;Check Out Our Facilities&nbsp;<hr class="welcome"></h1>
+                <a href="../Rooms/Rooms.html"><img id="rooms" src="Images/rooms.png" alt="Rooms banner"></a><!--
+             --><a href="../Events/event.html"><img id="events" src="Images/YrjAj51459951905.png" alt="Events banner"></a><!--
+             --><a href="../Rooms/Rooms.html"><img id="gallery" src="Images/gallery.png" alt="Gallery banner"></a><!--
+         --></div>
+            <h1 id="locations"><hr class="welcome">&nbsp;Our Locations&nbsp;<hr class="welcome"></h1>
+            <div class="locationList">
+                <div id="lucia">
+                    <div class="details"><!--
+                     --><h1>Visit Our Hotel in St.Lucia</h1>
+                        <img src="Images/arrow.png" id="more">
+                            <p>175 Rooms</p>
+                            <p>Tennis Courts</p>
+                            <p>Massage Therapy</p>
+                            <p>Inside &amp; Outside Pool</p>
+                            <p>Traditional Cuisine Restaurant</p>
+                            <p><img src="Images/arrowUp.png" id="hideMore"></p>
+                        </div>
+                        </div> 
+                <br><br>
+                <div id="bahamas">
+                    <div class="details">
+                        <h1>Visit Our Hotel in Bahamas</h1>
+                        <img src="Images/arrow.png" id="bmore">
+                        <p>150 Rooms</p>
+                        <p>Aqua aerobics</p>
+                        <p>Sail Boats trips</p>
+                        <p>Exotic Cuisine Restaurant</p>
+                        <p><img src="Images/arrowUp.png" id="bhideMore"></p>
+                    </div>
+                </div>
+                <br><br>
+                <div id="jamaica">
+                    <div class="details">
+                        <h1>Visit Our Hotel in Jamaica</h1>
+                        <img src="Images/arrow.png" id="jmore">
+                        <p>200 Rooms</p>
+                        <p>5-Star Spa</p>
+                        <p>Surfing Classes</p>
+                        <p>Pool</p>
+                        <p><img src="Images/arrowUp.png" id="jhideMore"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"> 
+            <p id="footNav"><a href="homepage.html">Home</a> <a href="../Rooms/Rooms.html">Rooms</a>  <a href="../Events/event.html">Events</a>  <a href="../ContactUs/contactUs.html">Contact Us</a>  <a href="../AboutUs/AboutUs.html">About Us</a>  <a href="../MakeReservation/makeReservation.html">Reserve a Room</a>  <a href="../Events/event.html">Reserve an Event</a></p>
+            <p id="links"><a href="https://www.tripadvisor.ca"><img src="../trip.png"></a><a href="https://www.facebook.com"><img src="../facebook.png"></a><a href="https://www.instagram.com"><img src="../instagram.png"></a><a href="https://twitter.com"><img src="../twitter.png"></a><a href="https://plus.google.com/getstarted/getstarted?fww=1"><img src="../googleplus.png"></a></p>
+            <h6>&copy;&nbsp;Copyright The Lucid Palace.<br> All rights reserved. Centennial College 2016</h6>
+        </div>
+    </body>
+</html>

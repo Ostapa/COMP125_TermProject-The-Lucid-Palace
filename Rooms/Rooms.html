@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+			COMP125: Client-Side Web Development
+			Group Project: The Lucid Palace
+			Authors: Kevin Ma, Ostap Hamarnyk, Vinood Persad, Joshua MacAulay
+			Date: March 28, 2016
+			
+			Filename: Rooms.html
+	-->
+        <title>The Lucid Palace</title>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="rooms.css">
+		<link href="http://fonts.googleapis.com/css?family=Arizonia" rel="stylesheet" type="text/css">
+		<script src="../jquery-1.12.3.min.js"></script>
+        <script src="../modernizr.custom.05819.js"></script>
+        <script src="homepage.js"></script>
+		<script>
+			function select(typeName){
+				if(parseInt(localStorage.getItem(typeName)) > 0){
+					$("#rmType").val(typeName);
+					$("form").submit();
+				}else{
+					alert("Sorry there are currently no " + typeName + " rooms available. Please select a different type of room.");
+				}
+			}
+			
+			function setUpRoomAvail(){
+				if(localStorage.getItem("Interconnecting")=== null){
+					localStorage.setItem("Interconnecting",100);
+				}
+				if(localStorage.getItem("Duplex")=== null){
+					localStorage.setItem("Duplex",50);
+				}
+				if(localStorage.getItem("Lanai")=== null){
+					localStorage.setItem("Lanai",25);
+				}
+				if(localStorage.getItem("Suite")=== null){
+					localStorage.setItem("Suite",10);
+				}
+				if(localStorage.getItem("King")=== null){
+					localStorage.setItem("King",1);
+				}
+				$("#rm1").html(localStorage.getItem("Interconnecting"));
+				$("#rm2").html(localStorage.getItem("Duplex"));
+				$("#rm3").html(localStorage.getItem("Lanai"));
+				$("#rm4").html(localStorage.getItem("Suite"));
+				$("#rm5").html(localStorage.getItem("King"));
+			}
+		</script>
+    </head>
+    <body onload="setUpRoomAvail()">
+        <div class="header">
+            <div class="subHeader">
+                <div class="name">
+                    <img id="logo" src="../icon.png" alt="Palace logo">
+                    <h1>The Lucid Palace</h1>
+                </div>
+                <div class="nav">
+                    <ul class="list">
+                        <li><a href="../Homepage/homepage.html">Home</a></li>
+                        <li><a href="Rooms.html">Rooms</a></li>
+                        <li><a href="../Events/event.html">Events</a></li>
+                        <li><a href="../Homepage/homepage.html">Locations</a>
+                            <ul>
+                                <li><a href="../Homepage/homepage.html#lucia">St.Lucia</a></li>
+                                <li><a href="../Homepage/homepage.html#bahamas">Bahamas</a></li>
+                                <li><a href="../Homepage/homepage.html#jamaica">Jamaica</a></li>
+                            </ul>
+                        </li> 
+                        <li><a href="../AboutUs/AboutUs.html">About</a></li>
+                        <li><a href="../ContactUs/contactUs.html">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main"><!-- Content goes here -->
+            <h1><hr class="welcome">&nbsp;Rooms&nbsp;<hr class="welcome"></h1>
+            <h3>In The Lucid Palace we have a variety of rooms to satisfy the needs of each customer.<br>Please select the desired type of room and click on the button to proceed</h3>
+				<div class="rm" style="background-image: url('Images/interconnect.jpg');background-size:contain;background-repeat:none" onclick="select('Interconnecting')">
+                    <div class="back">
+                        <h1>Interconnecting Rooms</h1>
+                        <p>A room sharing a common door. Mostly used by families.</p>
+                        <h5>There are <span id="rm1"></span> rooms currently available for reservation!</h5>
+                    </div>
+                    <div class="book">
+                        <button>Book now</button>
+                    </div>
+				</div>
+				<div class="rm" style="background-image: url('Images/duplex.jpg'); background-size;300px 100px:; background-repeat:none"id="second" onclick="select('Duplex')">
+                    <div class="back">
+                        <h1>Duplex Rooms</h1>
+                        <p>A room containing two floors, separated by internal staircase.</p>
+                        <h5>There are <span id="rm2"></span> rooms currently available for reservation!</h5>
+                    </div>
+                    <div class="book">
+                        <button>Book now</button>
+                    </div>
+				</div>
+				<div class="rm" style="background-image: url('Images/lanai.jpg'); background-size;300px 100px:; background-repeat:none"id="third"onclick="select('Lanai')">
+                    <div class="back">
+                        <h1>Lanai Rooms</h1>
+                        <p>A room over looking scenic beauties e.g. Garden, landscape or waterfall</p>
+                        <h5>There are <span id="rm3"></span> rooms currently available for reservation!</h5>
+                    </div>
+                    <div class="book">
+                        <button>Book now</button>
+                    </div>
+				</div>
+				<div class="rm" style="background-image: url('Images/suite.jpg'); background-size;300px 100px:; background-repeat:none"onclick="select('Suite')">
+                    <div class="back">
+                        <h1>Suite Rooms</h1>
+                        <p>A room comprising of two or more bedrooms, a living room and a dining room</p>
+                        <h5>There are <span id="rm4"></span> rooms currently available for reservation!</h5>
+                    </div>
+                    <div class="book">
+                        <button>Book now</button>
+                    </div>
+				</div>
+				<div class="rm" style="background-image: url('Images/king.jpg'); background-size;300px 100px:; background-repeat:none" onclick="select('King')">
+                    <div class="back">
+                        <h1>King Rooms</h1>
+                        <p>A full size all inclusive room with a king bed</p>
+                        <h5>There are <span id="rm5"></span> rooms currently available for reservation!</h5>
+                    </div>
+                    <div class="book">
+                        <button>Book now</button>
+                    </div>
+				</div>
+				<form method="get" action="../MakeReservation/makeReservation.html"><input type="hidden" name="roomType" id="rmType"></input></form>
+        </div>
+		<table id="steps">
+		<tr>
+			<td class="highlighted">1. Choose your room</td>
+			<td>2. Enter your details</td>
+			<td>3. Confirm your reservation</td>
+		</tr>
+		</table>
+        
+        <div class="footer"> 
+            <p id="footNav"><a href="../Homepage/homepage.html">Home</a> <a href="Rooms.html">Rooms</a>  <a href="../Events/event.html">Events</a>  <a href="../ContactUs/contactUs.html">Contact Us</a>  <a href="../AboutUs/AboutUs.html">About Us</a>  <a href="Rooms.html">Reserve a Room</a>  <a href="../Events/event.html">Reserve an Event</a></p>
+            <p id="links"><a href="https://www.tripadvisor.ca"><img src="../trip.png"></a><a href="https://www.facebook.com"><img src="../facebook.png"></a><a href="https://www.instagram.com"><img src="../instagram.png"></a><a href="https://twitter.com"><img src="../twitter.png"></a><a href="https://plus.google.com/getstarted/getstarted?fww=1"><img src="../googleplus.png"></a></p>
+            <h6>&copy;&nbsp;Copyright The Lucid Palace.<br> All rights reserved. Centennial College 2016</h6>
+        </div>
+    </body>
+</html>

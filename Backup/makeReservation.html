@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!--
+			COMP125: Client-Side Web Development
+			Group Project: The Lucid Palace
+			Author: Kevin Ma
+			Date: March 28, 2016
+			
+			Filename: makeReservation.html
+	-->
+		<meta charset="utf-8">
+		<title>The Lucid Palace - Make a Reservation</title>
+		<link href="makeReservation.css" rel="stylesheet" type="text/css">
+	</head>
+	<body onload="createEventListeners()">
+		<div class="header">
+             <!-- Place your banner picture in the css file-->
+            <div class="subHeader">
+                <div class="name">
+                    <img src="icon.png" alt="Palace logo">
+                    <h1>The Lucid Palace</h1>
+                </div>
+                <div class="nav">
+                    <ul class="list">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Rooms</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Locations</a>
+                            <ul>
+                                <li><a href="#">St. Lucia</a></li>
+                                <li><a href="#">Bahamas</a></li>
+                                <li><a href="#">Jamaica</a></li>
+                            </ul>
+                        </li> 
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	<article>
+        <div class="welcomeMsg">
+                    <h1><hr class="welcome">&nbsp;Make Reservation&nbsp;<hr class="welcome"></h1>
+        </div>
+		<form action="reservationConfirm.html" method="post" novalidate="false">
+			<fieldset id="guestInfo">
+				<legend>
+					Guest Information
+                </legend>
+				<table>
+					<tr>
+						<td>
+							<label>Contact name<span class="req">*</span></label><br>
+							<input type="text" id="fname" name="contact name" placeholder="First Name">
+						</td>
+						<td>
+							<br><input type="text" id="lname" name="contact name" placeholder="Last Name">
+						</td>
+						<tr class="errorMessage" id="contact name"></tr>
+					</tr>
+					<tr>
+						<td>
+							<label>Mobile phone number<span class="req">*</span></label><br>
+							<input type="text" id="phone" name="mobile phone number" placeholder="9051237586">
+						</td>
+						<tr class="errorMessage" id="mobile phone number"></tr>
+					</tr>
+					<tr>
+						<td>
+							<label>Email address<span class="req">*</span></label><br>
+							<input type="text" id="email" name="email address" placeholder="jdoe72@gmail.com">
+						</td>
+						<td>
+							<label>Confirm email address<span class="req">*</span></label><br>
+							<input type="text" id="confirmEmail" name="email address" placeholder="jdoe72@gmail.com">
+						</td>
+						<tr class="errorMessage" id="email address"></tr>
+					</tr>
+				</table>
+			</fieldset>
+			<br>
+			<fieldset>
+            <legend>Reservation Information</legend>
+				<table>
+					<tr>
+						<td>
+							<label>Hotel Location<span class="req">*</span></label>
+							<br>
+							<input type="radio" id="stluciaLocation" name="location"> St. Lucia
+							<input type="radio" id="bahamasLocation" name="location"> Bahamas
+							<input type="radio" id="jamaicaLocation" name="location"> Jamaica
+						</td>
+						
+					</tr>
+                    <tr class="errorMessage" id="location"></td>
+					<tr>
+						<td>
+							<label>Start Date</label><span class="req">*</span>
+							<br>
+							<input type="date" id="startDate" name="date">
+						</td>
+						<td>
+							<label>End Date</label><span class="req">*</span>
+							<br>
+							<input type="date" id="endDate" name="date">
+						</td>
+						
+					</tr>
+                    <tr class="errorMessage" id="date"></tr>
+					<tr>
+						<td>
+							<label>Smoking request</label><br>
+							<input type="radio" id="nonsmoking" name="smokingrequest"> Non-smoking&nbsp;<img src="nosmoke.png">
+							<input type="radio" id="smoking" name="smokingrequest"> Smoking&nbsp;<img src="smoke.png">
+						</td>
+					</tr>
+				</table>
+				<p>Your stay includes:</p>
+				<span class="checkfont">
+					<img src="images/check.png" width=20>
+					Air Conditioning &nbsp;
+					<img src="images/check.png" width=20>
+					Flat-screen TV &nbsp;
+					<img src="images/check.png" width=20>
+					City view &nbsp;
+					<img src="images/check.png" width=20>
+					Outdoor pool (all year) &nbsp;
+					<br><img src="images/check.png" width=20>
+					Indoor pool (all year) &nbsp;
+					<img src="images/check.png" width=20>
+					Free WiFi
+				</span>
+			</fieldset><br>
+			<fieldset>
+            <legend>Payment</legend>
+					<p style="margin-top:-10px" class="checkfont">
+						<img src="images/check.png" width=20>
+						$0.00 due now. Payment information is only to hold your reservation.
+					</p>
+					<table>
+						<tr>
+							<td>
+								<label>Card Type<span class="req">*</span></label><br>
+								<input type="radio" id="mastercard" name="cardtype">
+								<img src="images/mastercard.png" width=50>
+								<input type="radio" id="amex" name="cardtype">
+								<img src="images/aexpress.png" width=50>
+								<input type="radio" id="visa" name="cardtype">
+								<img src="images/visa.gif" width=50>
+							</td>
+							
+						</tr>
+                        <tr class="errorMessage" id="cardtype"></tr>
+						<tr>
+							<td style="text-align:left">
+								Cardholder name<span class="req">*</span><br>
+								<input type="text" id="cname" name="cardholder name">
+							</td>
+						</tr>
+                        <tr class="errorMessage" id="cardholder name"></tr>
+						<tr>
+							<td>
+								<label>Debit/Credit card number<span class="req">*</span></label><br>
+								<input type="number" id="cardnum" name="card number"
+								onkeyup="
+								if(isCardTypeUnchecked()){
+									alert('Please select a card type before entering card number.');
+									document.getElementById('cardnum').value='';
+									document.getElementById('cardnum').style.backgroundColor='#fee9e9';
+								}
+								">
+							</td>
+							<tr class="errorMessage" id="card number"></td>
+						</tr>
+						<tr>
+							<td>
+								<label>Expiration Date<span class="req">*</span></label><br>
+								<input type="month" id="expdate" name="expiration date">
+							</td>
+							<tr class="errorMessage" id="expiration date"></tr>
+						</tr>
+					</table>
+			</fieldset><br>
+			<fieldset>
+                <legend>Special Requests</legend>
+					<p>Special requests cannot be guaranteed–but the property will do its best to meet your needs. 
+					<br>Please write your requests in English or French.</p>
+					<textarea id="remarks"></textarea>
+					<br><br>
+					<input type="checkbox" id="quietRoom">
+					<label>I would like a quiet room</label>
+			</fieldset><br>
+			<fieldset id="last">
+                <input type="submit" value="Reserve Room" id="submitButton">
+				<p>Fields marked with * are required</p>
+				<img src="images/userlock.png" width="30px">
+				<span style="font-size:75%;">We use secure transmission and encrypted storage to protect your personal information.
+				</span>
+			</fieldset>
+		</form><br>
+		
+	</article>
+    <table id="steps">
+        <tr>
+            <td>1. Choose your room</td>
+            <td class="highlighted">2. Enter your details</td>
+            <td>3. Confirm your reservation</td>
+        </tr>
+    </table>
+	<footer>
+        <p>Will insert later</p>
+	</footer>
+	<script src="jquery-1.12.3.min.js"></script>
+	<script src="makeReservation.js"></script>
+	</body>
+</html>

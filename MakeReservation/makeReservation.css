@@ -1,0 +1,377 @@
+/*
+			COMP125: Client-Side Web Development
+			Group Project: The Lucid Palace
+			Authors: Kevin Ma, Ostap Hamarnyk, Vinood Persad, Joshua MacAulay
+			Date: March 28, 2016
+			
+			Filename: makeReservation.css
+*/
+.req{
+	color:red;
+}
+.checkfont{
+	color:#009966;
+}
+img{
+	display:inline;
+}
+input[type=submit]{
+	margin-bottom:5px;
+}
+form input[type=text], form input[type=number], form input[type=password],form input[type=email],form input[type=url],form input[type=date],form input[type=month],form input[type=time],form input[type=datetime],form input[type=datetime-local],form input[type=week],form input[type=number],form input[type=search],form input[type=tel],form input[type=color],form select,form textarea {
+  padding: .5em .6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width:100%;
+}
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+body {
+    font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 2000px;
+    background-color: #fdfdfd;
+}
+
+article {
+    width:700px;
+    margin: 20px auto;
+}
+
+fieldset {
+    border: 1px solid #333333;
+    border-radius:15px;
+    text-align: center;
+    padding: 40px 15px;
+}
+legend {
+    font-size: 25px;
+    text-align: left;
+    padding: 7px;
+    border: none;
+}
+
+#guestInfo input{
+    width:325px;
+}
+
+label {
+    float: left;
+}
+
+#quietRoom {
+    float: left;
+}
+
+#remarks {
+    width: 100%;
+    height: 100px;
+}
+
+#submitButton {
+    width: 300px;
+    height: 50px;
+    font-size: 15px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #333333;
+}
+
+#submitButton:hover {
+    background: #333333;
+    color: #fff;
+}
+
+#last {
+    border: none;
+}
+.header {
+    background-attachment: fixed;
+    width: 100%;
+    background-image:url(images/Events.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height:30%;
+}
+
+.subHeader {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.7);   
+    padding-right: 25px;
+}
+
+.name h1, .name img {
+    padding-left: 10px;
+    color: #e4e4e4;
+    float: left; 
+    top:0;
+    font-weight: 200;
+}
+.name h1 {
+    padding: 50px 0 0 10px;
+    margin: 0;
+}
+.wrapper {
+    width:100%;    
+    margin: 0;
+    text-align: center;
+}
+
+.welcome {
+    padding: 0 5px;
+}
+#locations {
+    padding: 50px 0 20px;
+}
+.facilities {
+    width: 100%;
+    display: inline-block;
+    outline: 0;
+    
+}
+.facilities img {
+    zoom: 1.6; /* This is not gonna work in Mozila or Opera*/
+    display: inline-block;
+    width:33%;
+    padding: 25px 0;
+    margin: 0;
+    min-height: 225px;
+    background: none;
+    border: none;
+    
+}
+
+.facitites img a:hover {
+    background: rgba(13, 13, 13, 0.7);
+}
+.facilities h1 {
+    padding: 50px 0 10px;
+}
+/* Navigaton bar */
+.nav ul {
+    float:right;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding: 20px 10px 0 0;
+}
+
+.nav li {
+    line-height: 60px;
+    display: inline-block;
+    width: 80px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+.nav a:hover {
+    color: #cb9744;
+	text-shadow:  0 0 2px #cb9744, 0 0 5px #cb9744;
+	
+}
+/* Sub menus */
+.nav li ul {
+    position: absolute;
+    display: block;
+    visibility: hidden;
+    padding: 0;
+    opacity: 0;
+    background-color: rgba(13, 13, 13, 0.7);
+    transition: visibility linear 0.5s, opacity 0.5s linear;
+    
+}
+.nav a {
+    border-bottom: none;
+}
+
+.nav li:hover ul {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    
+}
+
+.nav li ul li {
+    display: block;
+    line-height: 40px; 
+    font-size: 16px;
+    text-align: right;
+    width:150px;
+    text-align: left;
+    padding-left: 10px;
+    
+}
+.nav li ul li:hover {
+    background-color: #cb9744;
+    background-size: 100%;
+    
+}
+.nav li ul li a:hover {
+    color: #fff;
+}
+
+/* Positioning and styling location divs */
+#lucia, #bahamas, #jamaica {
+    height: 300px;
+}
+#lucia{
+    background-image: url(toronto.jpg);
+    background-size: 100%;
+}
+
+#bahamas {
+    background-image: url(ottawa.jpg);
+    background-size: 100%;
+}
+#jamaica {
+    background-image:url(niagara.jpg);
+    background-size: 100%;
+}
+
+.details p{
+    display: none;
+}
+.details {
+    background-color: rgba(13, 13, 13, 0.7);
+    height: 100px;
+    float: left;
+    color: #fff;
+    margin: 0 20px 10px;
+}
+
+#bahamas .details {
+    float: right !important;
+    
+}
+
+.welcomeMsg {
+    padding: 25px;
+}
+
+.welcomeMsg h1 {
+    padding: 5px 10px;
+    margin: 0 auto;
+}
+
+hr.welcome {
+    display: inline-block;
+    width:15%;
+    padding: 0 5px 8px 5px;
+    margin: 0 auto;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+}
+.details p, h1{
+    margin: 0;
+    padding: 10px;
+}
+
+#makeReservation {
+    background-image: url(Events.jpg);
+    width: 100%;
+    padding: 30px 0;
+    height: 500px;
+}
+
+button {
+    width:100px;
+    height:50px;
+    background: #333;
+    opacity: 0.7;
+    color: #fff;
+    border: none;
+    vertical-align: middle;
+}
+button:hover {
+    color: #333;
+    background-color: #fff;
+    opacity: 0.7;
+}
+
+.footer {
+    position: absolute;
+    top: 2750px;
+    color: #fff;
+    width: 100%;
+    bottom: 0;
+    height: 250px;
+    background: #1d1d1d;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer h6 {
+    font-weight: 400;
+}
+
+
+#footNav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+#links a {
+    text-decoration: none;
+    padding-left:10px;
+    
+}
+
+#confirm body{
+    height: 800px;
+}
+
+#confirm .footer {
+    position: relative;
+    bottom:0;
+    top:0;
+}
+.errorMessage {
+    display: none;
+    margin-top: 5px;
+    background: #ff8784;
+	border: 1px solid #eb5245;
+    border-radius: 5px;
+}
+
+#steps {
+    width: 100%;
+    border-collapse: collapse;
+}
+#steps td {
+    border: 1px solid #333333;
+    font-size: 20px;
+    padding: 7px;
+    width: 33%;
+}
+.highlighted{
+	background-color:#333333;
+    color: #fff;
+}
+
+#reservationConfirm {
+    background-image: url(skks.png);
+    height: 100px;
+}
